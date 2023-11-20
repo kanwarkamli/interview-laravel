@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: School API
+  version: 0.1.0
+  description: An API for managing students and courses.
+paths:
+  /students:
+    get:
+      summary: List all students
+      responses:
+        '200':
+          description: An array of students
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+      operationId: students.index
+      tags:
+        - students
+      description: |-
+        List of all students
+
+        The email parameter needs to be an exact match.
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: email
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        courses:
+          type: array
+          items:
+            $ref: '#/components/schemas/Course'
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+        - email
+        - created_at
+        - updated_at
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name
+servers:
+  - url: 'http://localhost:8080/api'
+    description: local
+tags:
+  - name: students
