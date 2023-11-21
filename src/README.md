@@ -38,7 +38,7 @@ To deploy, clone the repository by running these commands:
 
 ```bash
   mkdir toy8 && cd toy8
-  git clone https://github.com/kanwarkamli/engineering.git .
+  git clone https://github.com/kanwarkamli/interview-laravel.git .
   cp .env.example .env
   docker compose up -d
 ```
