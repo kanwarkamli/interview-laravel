@@ -10,6 +10,10 @@ jobs:
     name: Test and Static Analysis
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: src  # Set the working directory for all steps
+
     services:
       mysql:
         image: mysql:8.0
@@ -51,12 +55,8 @@ jobs:
       - name: Run Tests
         run: vendor/bin/pest
 
-      - name: Run PHPStan (PHP Static Analysis Tool)
-        uses: php-actions/phpstan@v3
-        with:
-          path: |
-            app
-            test
+      - name: Analyze with PHPStan
+        run: vendor/bin/phpstan analyse
 
       - name: Run Laravel Pint
         uses: aglipanci/laravel-pint-action@2.0.0

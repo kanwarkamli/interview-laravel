@@ -1,0 +1,46 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method Laravel\\\\Sanctum\\\\Contracts\\\\HasAbilities\\:\\:delete\\(\\)\\.$#"
+			count: 1
+			path: app/Http/Controllers/AuthController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Resources\\\\CoursesResource\\:\\:\\$id\\.$#"
+			count: 1
+			path: app/Http/Resources/CoursesResource.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Resources\\\\CoursesResource\\:\\:\\$name\\.$#"
+			count: 1
+			path: app/Http/Resources/CoursesResource.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Resources\\\\StudentsResource\\:\\:\\$courses\\.$#"
+			count: 1
+			path: app/Http/Resources/StudentsResource.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Resources\\\\StudentsResource\\:\\:\\$created_at\\.$#"
+			count: 1
+			path: app/Http/Resources/StudentsResource.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Resources\\\\StudentsResource\\:\\:\\$email\\.$#"
+			count: 1
+			path: app/Http/Resources/StudentsResource.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Resources\\\\StudentsResource\\:\\:\\$id\\.$#"
+			count: 1
+			path: app/Http/Resources/StudentsResource.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Resources\\\\StudentsResource\\:\\:\\$name\\.$#"
+			count: 1
+			path: app/Http/Resources/StudentsResource.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Resources\\\\StudentsResource\\:\\:\\$updated_at\\.$#"
+			count: 1
+			path: app/Http/Resources/StudentsResource.php
